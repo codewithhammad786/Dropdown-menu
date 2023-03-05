@@ -1,0 +1,131 @@
+body {
+    background-image: url("1.jpg");
+}
+
+.wrap {
+    width: max-content;
+}
+
+.typing {
+    overflow: hidden;
+    white-space: nowrap;
+    color: aqua;
+    border-right: 1px solid black;
+    animation: typing 2s steps(20) infinite alternate,
+    0.7s infinite ;
+    margin-top: 50%;
+    padding-left: 60%;
+    font-size: 50px;
+    padding-right: 5px;
+}
+
+@keyframes typing {
+    0%{
+        width: 0%;
+        visibility: hidden;
+    }
+
+    100%{
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    50%{
+        border-color: transparent;
+    }
+    100%{
+        border-color: black;
+    }
+}
+
+.menu, .submenu{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.menu{
+    margin: 50px auto;
+    width: 800px;
+    width: fit-content;
+}
+
+.menu > li {
+    background-color: #34495e;
+    float: left;
+    transform: skewX(0deg);
+    border-radius: 50px;
+}
+
+.menu a {
+    display: block;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: cursive;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.menu li:hover {
+    background-color: #0b0040;
+}
+
+.menu > li > a {
+    padding: 1em 2em;
+}
+
+.submenu {
+    position: absolute;
+    width: 200px;
+    left: 50%;
+    margin-left: -100px;
+    transform-origin: left top;
+}
+
+.submenu li {
+    background-color: #34495e;
+    overflow: hidden;
+}
+
+.submenu > li > a {
+    padding: 1em 2em;
+}
+
+.submenu > li::after {
+    content: '';
+    position: absolute;
+    top: -125%;
+    height: 100%;
+    width: 100%;
+    box-shadow: 0 0 50px black;
+}
+
+.submenu, .submenu li {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.submenu li {
+    transition: 0.2s ease transform;
+}
+
+.menu > li:hover .submenu,
+.menu > li:hover .submenu li {
+    opacity: 1;
+    visibility: visible;
+}
+
+.menu > li:hover .submenu li:nth-child(even){
+    transform: skewX(0deg) translateX(0px);
+    margin-top: 5px;
+    border-radius: 10px;
+}
+
+.menu > li:hover .submenu li:nth-child(odd){
+    transform: skewX(0deg) translateX(0px);
+    margin-top: 5px;
+    border-radius: 10px;
+}
+
